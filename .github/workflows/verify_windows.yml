@@ -12,6 +12,7 @@ jobs:
     runs-on: windows-2019
 
     strategy:
+      fail-fast: false
       matrix:
         node-version: [18.x, 20.x]
 
@@ -36,27 +37,7 @@ jobs:
       - name: yarn install
         run: yarn install --immutable
 
-      - name: lint
-        run: yarn backstage-cli repo lint
-
-      - name: type checking and declarations
-        run: yarn tsc:full
-
-      - name: verify type dependencies
-        run: yarn lint:type-deps
-
       - name: test
         run: yarn backstage-cli repo test --maxWorkers=2 --workerIdleMemoryLimit=1300M
         env:
           BACKSTAGE_TEST_DISABLE_DOCKER: 1
-
-      # credit: https://github.com/appleboy/discord-action/issues/3#issuecomment-731426861
-      - name: Discord notification
-        if: ${{ failure() }}
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: |
-          $MESSAGE=@"
-          {\"content\": \"Windows master build failed https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}\"}
-          "@
-          C:\msys64\usr\bin\curl.exe -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST $env:DISCORD_WEBHOOK --data $MESSAGE
