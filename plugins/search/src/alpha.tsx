@@ -17,6 +17,7 @@
 import React from 'react';
 
 import { Grid, makeStyles, Paper, Theme } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
 
 import {
   CatalogIcon,
@@ -39,6 +40,7 @@ import {
   createApiExtension,
   createPageExtension,
   createExtensionInput,
+  createNavItemExtension,
 } from '@backstage/frontend-plugin-api';
 
 import {
@@ -220,4 +222,12 @@ export const SearchPage = createPageExtension({
       </SearchContextProvider>
     );
   },
+});
+
+/** @alpha */
+export const SearchNavItem = createNavItemExtension({
+  id: 'plugin.search.nav.index',
+  routeRef: searchRouteRef,
+  title: 'Search',
+  icon: SearchIcon,
 });
