@@ -30,6 +30,7 @@ import {
   sidebarConfig,
   SidebarDivider,
   SidebarItem,
+  SidebarGroup,
 } from '@backstage/core-components';
 // eslint-disable-next-line @backstage/no-relative-monorepo-imports
 import LogoIcon from '../../../app/src/components/Root/LogoIcon';
@@ -77,9 +78,15 @@ export const CoreNav = createExtension({
   },
   factory({ bind, inputs }) {
     const SidebarNavItem = (props: NavTarget) => {
-      const { icon, title, routeRef } = props;
+      const { icon: Icon, title, group, routeRef } = props;
       const to = useRouteRef(routeRef)();
-      return <SidebarItem icon={icon} to={to} text={title} />;
+      return group ? (
+        <SidebarGroup label={title} icon={<Icon />} to={to}>
+          {group}
+        </SidebarGroup>
+      ) : (
+        <SidebarItem icon={Icon} to={to} text={title} />
+      );
     };
     bind({
       element: (
