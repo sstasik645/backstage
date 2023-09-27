@@ -55,7 +55,7 @@ Inside your `packages/app/src/App.tsx`, look for
 ```tsx title="packages/app/src/App.tsx"
 const routes = (
   <FlatRoutes>
-    <Navigate key="/" to="catalog" />
+    <Route path="/" element={<Navigate to="catalog" />} />
     {/* ... */}
   </FlatRoutes>
 );
@@ -72,7 +72,7 @@ import { HomePage } from './components/home/HomePage';
 const routes = (
   <FlatRoutes>
     {/* highlight-remove-next-line */}
-    <Navigate key="/" to="catalog" />
+    <Route path="/" element={<Navigate to="catalog" />} />
     {/* highlight-add-start */}
     <Route path="/" element={<HomepageCompositionRoot />}>
       <HomePage />
