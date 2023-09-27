@@ -1,5 +1,14 @@
 # example-backend
 
+## 0.2.88-next.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/plugin-badges-backend@0.3.2-next.1
+  - @backstage/plugin-kubernetes-backend@0.12.2-next.1
+  - example-app@0.2.88-next.1
+
 ## 0.2.88-next.0
 
 ### Patch Changes

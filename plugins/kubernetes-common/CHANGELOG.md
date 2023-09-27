@@ -1,5 +1,11 @@
 # @backstage/plugin-kubernetes-common
 
+## 0.7.0-next.0
+
+### Minor Changes
+
+- 2d8151061c: Refactor Kubernetes plugins in line with ADR 11, no breaking changes yet
+
 ## 0.6.6
 
 ### Patch Changes

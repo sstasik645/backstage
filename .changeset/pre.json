@@ -245,7 +245,8 @@
     "@backstage/plugin-vault": "0.1.19",
     "@backstage/plugin-vault-backend": "0.3.8",
     "@backstage/plugin-xcmetrics": "0.2.43",
-    "@backstage/e2e-test-utils": "0.0.0"
+    "@backstage/e2e-test-utils": "0.0.0",
+    "@backstage/plugin-kubernetes-react": "0.0.0"
   },
   "changesets": [
     "angry-badgers-beg",
@@ -253,6 +254,7 @@
     "calm-scissors-rescue",
     "chatty-papayas-care",
     "clean-forks-love",
+    "create-app-1695834242",
     "dull-bugs-build",
     "dull-dolls-explode",
     "dull-experts-kiss",
@@ -268,6 +270,7 @@
     "lemon-cups-wait",
     "lovely-coins-occur",
     "lovely-fans-sniff",
+    "many-swans-eat",
     "moody-lobsters-rescue",
     "nice-clocks-smash",
     "nice-dancers-explain",
@@ -282,6 +285,7 @@
     "shy-clouds-reflect",
     "silent-years-bake",
     "small-pugs-build",
+    "spicy-chairs-film",
     "spotty-badgers-wash",
     "stupid-eagles-shave",
     "tasty-doors-switch",

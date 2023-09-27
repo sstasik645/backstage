@@ -1,5 +1,11 @@
 # @backstage/plugin-badges-backend
 
+## 0.3.2-next.1
+
+### Patch Changes
+
+- 817f2acbb1: Make sure the default badge factory is used if nothing is defined
+
 ## 0.3.2-next.0
 
 ### Patch Changes
